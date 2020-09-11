@@ -1,6 +1,7 @@
 package com.example.a11_sabaq
 
 import android.content.res.Resources
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -30,22 +31,26 @@ class MainActivity : AppCompatActivity() {
 
         val buttonLeft = Button(this)
         buttonLeft.text = "left"
+        buttonLeft.setTextColor(Color.MAGENTA)
         val buttonCenter = Button(this)
         buttonCenter.text = "center"
+        buttonCenter.setTextColor(Color.BLUE)
         val buttonRight = Button(this)
         buttonRight.text = "right"
+        buttonRight.setTextColor(Color.BLACK)
         val buttonClear = Button(this)
         buttonClear.text = "clear"
+        buttonClear.setTextColor(Color.RED)
 
         val buttonLP1 = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
         val buttonLP2 = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
         val buttonLPA = LinearLayout.LayoutParams(toInt(130), toInt(100))
         val buttonLPB = LinearLayout.LayoutParams(toInt(130), toInt(100))
         val buttonLPC = LinearLayout.LayoutParams(toInt(130), toInt(100))
+        buttonLP1.weight = 1F
         buttonLPA.gravity = Gravity.START
         buttonLPB.gravity = Gravity.CENTER
         buttonLPC.gravity = Gravity.END
-        buttonLP1.weight = 1F
 
         buttonLeft.layoutParams = buttonLP1
         buttonCenter.layoutParams = buttonLP1
@@ -60,18 +65,21 @@ class MainActivity : AppCompatActivity() {
         buttonLeft.setOnClickListener {
             var button1 = Button(this)
             button1.layoutParams = buttonLPA
+            button1.setBackgroundColor(Color.MAGENTA)
             layout3.addView(button1)
         }
 
         buttonCenter.setOnClickListener {
             var button2 = Button(this)
             button2.layoutParams = buttonLPB
+            button2.setBackgroundColor(Color.BLUE)
             layout3.addView(button2)
         }
 
         buttonRight.setOnClickListener {
             var button3 = Button(this)
             button3.layoutParams = buttonLPC
+            button3.setBackgroundColor(Color.BLACK)
             layout3.addView(button3)
         }
 
